@@ -1,0 +1,6 @@
+.ui-state-default .ui-state-disabled ng-tns-c2-0 ng-star-inserted {
+    background-color: red !important;
+}
+.ui-state-default .ui-state-disabled .ng-tns-c2-0 .ng-star-inserted {
+    background-color: red !important;
+}

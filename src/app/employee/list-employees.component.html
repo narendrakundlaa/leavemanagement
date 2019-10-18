@@ -1,0 +1,30 @@
+<a routerLinkActive="active" routerLink="/create">Add Employee</a>
+
+<div class="table-responsive">
+    <table class="table table-bordered" *ngIf="employees && employees.length">
+        <thead>
+            <tr class="bg-primary">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Skill</th>
+                <th>Experience</th>
+                <!-- <th>DOJ</th> -->
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees" >
+                <td>{{ employee.fullName }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.skillName }}</td>
+                <td>{{ employee.experienceInYears }}</td>
+                <!-- <td>{{employee.doj }}</td> -->
+                <td>
+                    <button class="btn btn-info marginRIght" (click)="viewData(employee.id)">View</button>
+                    <button class="btn btn-warning marginRIght" (click)="EditEmployee(employee.id)">Edit</button>
+                    <button class="btn btn-danger marginRIght" (click)="delete(employee.id);">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

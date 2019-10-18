@@ -1,0 +1,20 @@
+{
+  "employees": [
+    {
+      "id": 2,
+      "fullName": "Narendra Kundla",
+      "experienceInYears": "233",
+      "email": "k@gmail.com",
+      "skillName": "Java/Angular"
+    }
+  ],
+  "dates": [
+    {
+      "id": 1,
+      "date": ""
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,39 @@
+<form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="ui-g-12 ui-md-4">
+        <h3>Range Leave</h3>
+
+        <p-calendar formControlName="range" selectionMode="range" [readonlyInput]="true"
+            [disabledDates]="invalidDatesTwo"></p-calendar>
+        <button class="btn btn-primary ml-2" type="submit">Add Date</button>
+
+    </div>
+</form>
+<!-- <div *ngFor="let d of invalidDatesTwo[0] "> -->
+    <!-- {{invalidDatesTwo[0] | date}}: {{invalidDatesTwo[2] | date}} -->
+<!-- </div> -->
+<!-- <div *ngFor="let d of invalidDatesTwo">
+    {{d | date}}
+</div> -->
+
+<div class="table-responsive" *ngIf="invalidDatesTwo.length > 0">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="bg-primary">
+                    <th>Sno</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of invalidDatesTwo;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{ d | date}}</td>
+                    <td>
+    
+                        <button class="btn btn-danger marginRIght" (click)="Cancle(i, d)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

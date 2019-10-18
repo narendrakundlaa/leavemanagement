@@ -1,0 +1,16 @@
+<div class="ui-g-12 ui-md-4">
+    <h3>Single Days</h3>
+    <p-calendar [(ngModel)]="date5" [disabledDates]="invalidDates" [disabledDays]="[0,6]" [readonlyInput]="true"
+        (click)="getDate(date5)"></p-calendar>
+
+</div>
+
+<div class="ui-g-12 ui-md-4">
+    <h3>Multiple Days</h3>
+    <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" [disabledDays]="[0,6]"
+        [disabledDates]="invalidRanges" (click)="invalidRangeDates(rangeDates)"></p-calendar>
+</div>
+
+<div *ngFor="let d of invalidDates">
+    {{d | date}}
+</div>

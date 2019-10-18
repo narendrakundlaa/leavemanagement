@@ -1,0 +1,34 @@
+<form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="ui-g-12 ui-md-4">
+            <h3>Leave</h3>
+            <p-calendar formControlName="doj" [disabledDates]="invalidDates" [disabledDays]="[0,6]" [readonlyInput]="true">
+            </p-calendar>
+            <button class="btn btn-primary ml-2" type="submit">Add Date</button>
+    
+        </div>
+    
+    </form>
+    
+    
+    <div class="table-responsive" *ngIf="invalidDates.length > 0">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="bg-primary">
+                    <th>Sno</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of invalidDates;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{ d | date}}</td>
+                    <td>
+    
+                        <button class="btn btn-danger marginRIght" (click)="Cancle(i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
